@@ -1,0 +1,123 @@
+* { padding: 0; margin: 0; }
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	/*background-image:url(../assets/layout/global-background.gif);*/
+	background-color: #666666;
+	background-repeat: repeat-x;
+}
+
+#wrapper {
+	margin: 0 auto;
+ 	width: 940px;
+ 	padding-top:10px;
+}
+
+#faux {
+	background:#FFFFFF;
+ 	padding-top: 5px;
+ 	overflow: auto;  /*Paul O Brien Fix for IE www.pmob.co.uk */
+ 	width: 940px;
+}
+
+/*--------------------------------------------------------*/
+/* Styles for structure Header STARTS */
+/*--------------------------------------------------------*/
+
+#header { 
+	width: 940px;
+	height:89px;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*--------------------------------------------------------*/
+/* Styles for structure Banner STARTS */
+/*--------------------------------------------------------*/
+
+#banner {
+	width:940px;
+	height:130px;
+	padding-bottom: 6px;
+	*padding-bottom: 0px;
+	margin: 0px;
+}
+
+/*--------------------------------------------------------*/
+/* Styles for structure Navigation STARTS */
+/*--------------------------------------------------------*/
+
+#navigation {
+	width: 940px;
+ 	height: 24px;
+ 	color: #333;
+ 	padding: 0px;
+ 	margin: 0px;
+ 	position: relative;
+ 	z-index: 10;
+}
+
+/*--------------------------------------------------------*/
+/* Styles for structure Content STARTS */
+/*--------------------------------------------------------*/
+
+#contentArea {
+ 	width: 900px;
+ 	color: #333;
+ 	margin: 0px 10px 30px 10px;
+ 	*margin: 0px 10px 50px 10px;
+ 	padding: 10px 10px 0px 0px;
+ 	*padding: 10px 10px 20px 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+#contentArea p{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+/*--------------------------------------------------------*/
+/* Styles for structure Right Column STARTS */
+/*--------------------------------------------------------*/
+
+#rightcolumn {
+	float: left;
+ 	width:205px;
+ 	color: #333;		
+ 	margin: 20px 10px 10px 0px;
+ 	padding: 0px 0px 0px 0px;
+ 	vertical-align:top;
+}
+
+/*--------------------------------------------------------*/
+/* Styles for structure Footer STARTS */
+/*--------------------------------------------------------*/
+
+#footer {
+	width: 971px;
+ 	height:30px;
+ 	clear: both;
+ 	color: #333;
+ 	margin: 0px 0px 10px 0px;
+ 	background-image:url(../assets/layout/footer.png);
+ 	background-repeat:no-repeat;
+}
+
+#copyright {
+	font-size: 12px;
+	color:#333333;
+	padding-top: 6px;
+}
+
+#menuFooter {
+	font-size: 12px;
+	padding: 6px 0px 0px 40px;
+	color:#006699;
+}
+
+.clear { 
+	clear: both; 
+	background: none;
+}

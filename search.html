@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="../js/pngfix.js"></script>
+<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Online Market Research</title>
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/navigation.css" />
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+
+<!--data tables css & js-->
+<!--style type="text/css" title="currentStyle">
+    @import "css/demo_table_jui.css";
+    @import "css/jquery-ui-1.8.4.custom.css";
+    @import "css/TableTools_JUI.css";
+</style-->
+<link rel="stylesheet" type="text/css" href="css/demo_table_jui.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.4.custom.css" />
+<!--link rel="stylesheet" type="text/css" href="css/TableTools_JUI.css" /-->
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.columnFilter.js"></script>
+<!--script type="text/javascript" src="js/TableTools.js"></script-->
+
+<script type="text/javascript">
+$(document).ready(function() {
+		//alert('ready ');
+    var oTable = $('#omr_search').dataTable( {
+				"bJQueryUI": true,
+        "bFilter": true,
+        "bSort": true,
+        "sPaginationType": "full_numbers",
+        "bProcessing": true,
+        "sAjaxSource": "ITC_JSON_DATATABLE_EXPORTED.json",
+				"bAutoWidth" : false,
+        "aoColumnDefs": [
+            { "aTargets": [0], "mData": "title", "sWidth" : "20%" },
+            { "aTargets": [1], "mData": "category", "sWidth" : "10%" },
+            { "aTargets": [2], "mData": "language", "sWidth" : "10%" },
+						{ "aTargets": [3], "mData": "source", "sWidth" : "15%" },
+						{ "aTargets": [4], "mData": "country", "sWidth" : "15%" },
+						{ "aTargets": [5], "mData": "pdate", "sWidth" : "10%" },
+            { "aTargets": [6], "mData": "pdf_location", "sWidth" : "10%", "bSortable": false, "fnRender": function(oObj){
+							console.log(oObj);
+							return "<a title='URL' target='_blank' href='"+oObj.aData.url+"'><img src='icons/url.png' /></a>&nbsp;&nbsp;<a title='PDF' target='_blank' href='"+oObj.aData.pdf_location+"'><img src='icons/pdf.png' /></a>";
+						} } 
+        ]
+    } ).columnFilter({
+					aoColumns:  [
+													{type: "text"},
+													{type: "text"},
+													{type: "text"},
+													{type: "text"},
+													{type: "text"},
+													{type: "text"},
+													null
+											]
+				});
+} );
+	
+</script>
+</head>
+<body>
+<!-- Begin Wrapper -->
+<div id="wrapper">
+  <!-- Begin Header -->
+  <div id="header"><img src="assets/layout/header.png" width="940" height="89" border="0" /></div>
+  <!-- End Header -->
+  <!-- Begin Navigation -->
+  <div id="navigation">
+    <div id="tabsB">
+      <ul>
+        <!-- CSS Tabs -->
+        <li><a href="home.html"><span>Homepage</span></a></li>
+        <li><a href="products-sectors.html"><span>Products / Sectors</span></a></li>
+        <li><a href="services.html"><span>Services</span></a></li>
+        <li><a href="http://www.intracen.org/" target="_blank"><span>About ITC</span></a></li>
+        <li><a href="contact.html"><span>Contact Details</span></a></li>
+				<li id="current"><a href="search.html"><span>Search</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- End Navigation -->
+  <!-- Begin Banner -->
+  <div id="banner"><img src="assets/layout/banner-resource-center.jpg" width="940" height="130" border="0" /></div>
+  <!-- End Banner -->
+  <!-- Begin Faux Columns -->
+  <div id="faux">
+    <!-- Begin Content Column -->
+    <div id="contentArea">
+      <h1 style="margin-left: 20px;">Search</h1>
+      <table id="omr_search">
+					<thead>
+							<tr>
+									<td>Title</td>
+									<td>Category</td>
+									<td>Language</td>
+									<td>Source</td>
+									<td>Country</td>
+									<td>Date</td>
+									<td></td>
+							</tr>
+					</thead>
+					<tbody>
+							<tr>
+									<td>Row 1 Data 1</td>
+									<td>Row 1 Data 2</td>
+									<td>Row 1 Data 1</td>
+									<td>Row 1 Data 2</td>
+									<td>etc</td>
+									<td>Row 1 Data 1</td>
+									<td>Row 1 Data 2</td>
+							</tr>
+					</tbody>
+					<tfoot>
+							<tr>
+									<th>Title</th>
+									<th>Category</th>
+									<th>Language</th>
+									<th>Source</th>
+									<th>Country</th>
+									<th>Date</th>
+									<th></th>
+							</tr>
+					</tfoot>
+			</table>
+      
+      
+    </div>
+    <!-- End Content Column -->
+  </div>
+  <!-- End Faux Columns -->
+  <!-- Begin Footer -->
+  <div id="footer">
+    <div align="center"> <span id="copyright">Copyright &copy; 2009 International Trade Centre. - All Rights Reserved </span> </div>
+  </div>
+  <!-- End Footer -->
+</div>
+<!-- End Wrapper -->
+</body>
+</html>
